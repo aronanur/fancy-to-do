@@ -17,11 +17,11 @@ Server : https://fancy-todo-server-arona.herokuapp.com/
 
 # Route Users
 
-| Route               | Method | Params | Description   |
-| ------------------- | ------ | ------ | ------------- |
-| /users/login        | POST   | none   | Login User    |
-| /users/register     | POST   | none   | Register User |
-| /users/google/login | POST   | none   | Oauth Google  |
+| Route               | Method | Params | Description        |
+| ------------------- | ------ | ------ | ------------------ |
+| /users/login        | POST   | none   | Login User         |
+| /users/register     | POST   | none   | Register User      |
+| /users/google/login | POST   | none   | Oauth Google Login |
 
 # Database Error
 
