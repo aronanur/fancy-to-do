@@ -1,5 +1,5 @@
 //Base Url
-const base_url = 'https://fancy-todo-server-arona.herokuapp.com'
+const base_url = 'http://localhost:3000'
 
 //global
 const $alertInfo = $('#alert-info')
