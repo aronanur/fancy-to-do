@@ -12,10 +12,10 @@
 
 # Route Users
 
-| Route         | Method | Params | Description   |
-| ------------- | ------ | ------ | ------------- |
-| /users/login  | POST   | none   | Login User    |
-| /users/logout | POST   | none   | Register User |
+| Route           | Method | Params | Description   |
+| --------------- | ------ | ------ | ------------- |
+| /users/login    | POST   | none   | Login User    |
+| /users/register | POST   | none   | Register User |
 
 # **How to get all todo list from database ?**
 
