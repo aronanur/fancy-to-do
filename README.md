@@ -12,13 +12,10 @@
 
 # Route Users
 
-| Route      | Method | Params          | Description                                        |
-| ---------- | ------ | --------------- | -------------------------------------------------- |
-| /todos     | GET    | none            | Get all todo item from database                    |
-| /todos     | POST   | none            | Create / post new todo into database               |
-| /todos/:id | PUT    | id(**integer**) | Update todo list from database by todo list **ID** |
-| /todos/:id | GET    | id(**integer**) | Get single todo item by todo **ID** from database  |
-| /todos/:id | DELETE | id(**integer**) | Delete single todo item by **ID** from database    |
+| Route         | Method | Params | Description   |
+| ------------- | ------ | ------ | ------------- |
+| /users/login  | POST   | none   | Login User    |
+| /users/logout | POST   | none   | Register User |
 
 # **How to get all todo list from database ?**
 
