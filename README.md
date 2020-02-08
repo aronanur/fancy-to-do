@@ -1,5 +1,10 @@
 # Dokumentasi Fancy To Do App
 
+# Deploy pages
+
+Client : https://aronanur.github.io/fancy-todos-arona.github.io/
+Server : https://fancy-todo-server-arona.herokuapp.com/
+
 # Route TODOS
 
 | Route      | Method | Params          | Description                                        |
@@ -12,10 +17,23 @@
 
 # Route Users
 
-| Route           | Method | Params | Description   |
-| --------------- | ------ | ------ | ------------- |
-| /users/login    | POST   | none   | Login User    |
-| /users/register | POST   | none   | Register User |
+| Route               | Method | Params | Description   |
+| ------------------- | ------ | ------ | ------------- |
+| /users/login        | POST   | none   | Login User    |
+| /users/register     | POST   | none   | Register User |
+| /users/google/login | POST   | none   | Oauth Google  |
+
+# Database Error
+
+### Status Code 500 Internal Server (Database Error)
+
+```javascript
+{
+    "message": {
+        "error": "Internal Server Error"
+    }
+}
+```
 
 # **How to get all todo list from database ?**
 
@@ -39,9 +57,9 @@
 
 ## Query String
 
-| params | Data type |
-| ------ | --------- |
-| title  | STRING    |
+| query | Data type |
+| ----- | --------- |
+| title | STRING    |
 
 ## Response
 
@@ -272,5 +290,127 @@
 ```javascript
 {
     "error": "Not Found"
+}
+```
+
+# **How to login users ?**
+
+## Path
+
+```javascript
+    [GitHub](http://localhost:3000/users/login)
+```
+
+## Method
+
+### **DELETE**
+
+## Request Body / Value
+
+| Field    | Data type |
+| -------- | --------- |
+| email    | STRING    |
+| password | STRING    |
+
+## Path Parameter
+
+**Params** is empty
+
+## Query String
+
+**Query string** is empty.
+
+## Response
+
+### Status **200** (Ok)
+
+```javascript
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoyNiwiZW1haWwiOiJhcm9uZHVsQGdtYWlsLmNvbSIsIm5hbWUiOiJBcm9uYSBOdXIgVGV0dWxpcyIsImxvZ2ludHlwZSI6ImxvY2FsIiwiY3JlYXRlZEF0IjoiMjAyMC0wMi0wN1QxMDo0Nzo1MS45NjRaIiwidXBkYXRlZEF0IjoiMjAyMC0wMi0wN1QxMDo0Nzo1MS45NjRaIn0sImlhdCI6MTU4MTE2NDQ1Mn0.dJ_tg6v1pxX9XdwwqsqKUcGQNmUaKL5dj9oLv5X5WIY",
+    "name": "Arona Nur Tetulis"
+}
+```
+
+### Status **403** (Forbidden)
+
+```javascript
+{
+    "message": {
+        "error": "Wrong email or password!"
+    }
+}
+```
+
+### Status **404** (Not Found)
+
+```javascript
+{
+    "message": {
+        "error": "Email doesn't exist!"
+    }
+}
+```
+
+# **How to register users ?**
+
+## Path
+
+```javascript
+    [GitHub](http://localhost:3000/users/register)
+```
+
+## Method
+
+### **DELETE**
+
+## Request Body / Value
+
+| Field    | Data type |
+| -------- | --------- |
+| email    | STRING    |
+| password | STRING    |
+| name     | STRING    |
+
+## Path Parameter
+
+**Params** is empty
+
+## Query String
+
+**Query string** is empty.
+
+## Response
+
+### Status **200** (Ok)
+
+```javascript
+{
+    "id": 1,
+    "email": "arona.nurs@gmail.com",
+    "password": "$2a$10$7s7qxud0F.6raG8LG65ve.LJNhyjwY.rzbAysX7NNl3J.7frNOmoe",
+    "name": "Arona Nur Tetulis",
+    "logintype": "local",
+    "updatedAt": "2020-02-08T10:30:30.184Z",
+    "createdAt": "2020-02-08T10:30:30.184Z"
+}
+```
+
+### Status **403** (Forbidden)
+
+```javascript
+{
+    "message": {
+        "error": "Wrong email or password!"
+    }
+}
+```
+
+### Status **400** (Validation / Bad Request)
+
+```javascript
+{
+    "message": {
+        "password": "Password wajib diisi!"
+    }
 }
 ```
